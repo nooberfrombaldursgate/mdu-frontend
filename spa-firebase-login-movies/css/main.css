@@ -5,7 +5,7 @@
   --light-grey: #f1f1f4;
   --text-color-light: #f1f1f1;
   --text-color-dark: #333;
-  --font-family: Helvetica, Arial, sans-serif;
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* ---------- general styling ---------- */
@@ -15,7 +15,6 @@ html {
   height: 100%;
   text-align: center;
   width: 100%;
-  font-weight: 300;
 }
 
 body {
@@ -26,6 +25,12 @@ h1 {
   font-size: 2em;
   font-weight: 400;
   letter-spacing: 3px;
+}
+
+h3 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0.5em 0 0.2em;
 }
 
 /* ---------- topbar styling ---------- */
