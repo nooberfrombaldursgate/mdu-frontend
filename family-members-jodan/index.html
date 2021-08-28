@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Family Members Exercise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Get started with HTML, CSS and JavaScript">
+  <meta name="author" content="Joachim Danielsen">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <input id="filter-in-family-members" type="search" list="list-family-members" autocomplete="off" placeholder="Filter family members" name="q">
+    <div class="details-wrapper">
+      <details>
+        <summary>Create a family member</summary>
+        <form class="create-family-member-form">
+          <input id="input-name" class="input-create-family-member" type="text" placeholder="Name" required>
+          <input id="input-birthday" class="input-create-family-member" type="date" placeholder="Birthday" required>
+          <input id="input-iconic-movie-quote" class="input-create-family-member" type="text" placeholder="Iconic movie quote" required>
+          <input id="input-iconic-movie-quote-citation" class="input-create-family-member" type="text" placeholder="Iconic movie quote citation" required>
+          <input id="input-headshot-img" class="input-create-family-member" type="url" placeholder="Image url" required>
+          <button id="button-create-family-member" type="button" name="button">OK</button>
+        </form>
+      </details>
+    </div>
+  </header>
+
+
+  <section id="content" class="grid-container"></section>
+
+  <datalist id="list-family-members">
+  </datalist>
+
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
