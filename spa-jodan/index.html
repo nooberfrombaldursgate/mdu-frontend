@@ -60,20 +60,21 @@
         <i class="bx bx-menu sidebarBtn"></i>
         <span class="dashboard">Menu</span>
       </div>
+      <div class="search-box">
+        <input id="filter-in-family-members" list="list-family-members" type="text" autocomplete="off" placeholder="Filter action heroes" name="q" />
+        <i class='bx bx-search'></i>
+      </div>
     </nav>
 
     <div class="home-content">
       <article id="home" class="page">
-        <h2>Overview of all family members</h2>
-        <div class="search-box">
-          <input id="filter-in-family-members" list="list-family-members" type="text" autocomplete="off" placeholder="Filter family members" name="q" />
-         
-        </div>
+        <h2>Action Hero Data Base</h2>
+
         <section id="content" class="grid-container"></section>
       </article>
 
       <article id="create" class="page">
-        <h2>Create a family member</h2>
+        <h2>Create an Action Hero</h2>
         <form class="create-family-member-form">
           <input id="input-create-name" class="input-family-member" type="text" placeholder="Name" />
           <input id="input-create-birthday" class="input-family-member" type="date" placeholder="Birthday" />
@@ -87,7 +88,7 @@
       </article>
 
       <article id="edit" class="page">
-        <h2>Edit a family member</h2>
+        <h2>Edit an Action Hero</h2>
         <form class="edit-family-member-form">
           <select id="select-edit-family-members" class="select-family-member" list="list-family-members"></select>
           <input id="input-edit-name" class="input-family-member" type="text" placeholder="Name" />
@@ -102,7 +103,7 @@
       </article>
 
       <article id="delete" class="page">
-        <h2>Delete a family member</h2>
+        <h2>Delete an Action Hero</h2>
         <form class="delete-family-member-form">
           <select id="select-delete-family-members" class="select-family-member" list="list-family-members"></select>
           <input id="input-delete-name" class="input-family-member" type="text" placeholder="Name" disabled />
