@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="Joachim Danielsen" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+  <link rel="icon" type="img/png" href="favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="img/png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="img/png" href="apple-touch-icon.png" sizes="180x180" />
+  <link rel="icon" type="img/png" href="android-chrome-192x192.png" sizes="192x192" />
+  <link rel="icon" type="img/png" href="android-chrome-512x512.png" sizes="512x512" />
+  <title>Single Page Application</title>
+
+  <!-- Boxicons CDN Link -->
+  <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bx-layer'></i>
+      <span class="logo_name">SPA</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#home">
+          <i class='bx bxs-grid' ></i>
+          <span class="links_name">Overview</span>
+        </a>
+      </li>
+      <li>
+        <a href="#create">
+          <i class='bx bx-plus-circle' ></i>
+          <span class="links_name">Create</span>
+        </a>
+      </li>
+      <li>
+        <a href="#edit">
+          <i class='bx bxs-edit-alt' ></i>
+          <span class="links_name">Edit</span>
+        </a>
+      </li>
+      <li>
+        <a href="#delete">
+          <i class='bx bxs-trash' ></i>
+          <span class="links_name">Delete</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class="bx bx-menu sidebarBtn"></i>
+        <span class="dashboard">Menu</span>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <article id="home" class="page">
+        <h2>Overview of all family members</h2>
+        <div class="search-box">
+          <input id="filter-in-family-members" list="list-family-members" type="text" autocomplete="off" placeholder="Filter family members" name="q" />
+         
+        </div>
+        <section id="content" class="grid-container"></section>
+      </article>
+
+      <article id="create" class="page">
+        <h2>Create a family member</h2>
+        <form class="create-family-member-form">
+          <input id="input-create-name" class="input-family-member" type="text" placeholder="Name" />
+          <input id="input-create-birthday" class="input-family-member" type="date" placeholder="Birthday" />
+          <input id="input-create-iconic-movie-quote" class="input-family-member" type="text" placeholder="Iconic movie quote" />
+          <input id="input-create-iconic-movie-quote-citation" class="input-family-member" type="text" placeholder="Iconic movie quote citation" />
+          <input id="input-create-headshot-img" class="input-family-member" type="url" placeholder="Image url" />
+          <button id="button-create-family-member" type="button" name="button">
+            Create
+          </button>
+        </form>
+      </article>
+
+      <article id="edit" class="page">
+        <h2>Edit a family member</h2>
+        <form class="edit-family-member-form">
+          <select id="select-edit-family-members" class="select-family-member" list="list-family-members"></select>
+          <input id="input-edit-name" class="input-family-member" type="text" placeholder="Name" />
+          <input id="input-edit-birthday" class="input-family-member" type="date" placeholder="Birthday" />
+          <input id="input-edit-iconic-movie-quote" class="input-family-member" type="text" placeholder="Iconic movie quote" />
+          <input id="input-edit-iconic-movie-quote-citation" class="input-family-member" type="text" placeholder="Iconic movie quote citation" />
+          <input id="input-edit-headshot-img" class="input-family-member" type="url" placeholder="Image url" />
+          <button id="button-edit-family-member" type="button" name="button">
+            Save changes
+          </button>
+        </form>
+      </article>
+
+      <article id="delete" class="page">
+        <h2>Delete a family member</h2>
+        <form class="delete-family-member-form">
+          <select id="select-delete-family-members" class="select-family-member" list="list-family-members"></select>
+          <input id="input-delete-name" class="input-family-member" type="text" placeholder="Name" disabled />
+          <input id="input-delete-birthday" class="input-family-member" type="date" placeholder="Birthday" disabled />
+          <input id="input-delete-iconic-movie-quote" class="input-family-member" type="text" placeholder="Iconic movie quote" disabled />
+          <input id="input-delete-iconic-movie-quote-citation" class="input-family-member" type="text" placeholder="Iconic movie quote citation" disabled />
+          <input id="input-delete-headshot-img" class="input-family-member" type="url" placeholder="Image url" disabled />
+          <button id="button-delete-family-member" type="button" name="button">
+            Delete
+          </button>
+        </form>
+      </article>
+    </div>
+  </section>
+  <datalist id="list-family-members"> </datalist>
+</body>
+
+</html>

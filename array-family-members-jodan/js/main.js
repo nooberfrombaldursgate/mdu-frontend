@@ -13,6 +13,9 @@ function calculatePersonAge(dateOfBirth) {
   // calculate time difference from birthday and unix epoch in years
   let differenceInYears = birthYear - 1970;
   let age = Math.abs(differenceInYears);
+  if (Number.isNaN(age)) {
+    age = 0;
+  }
   return age;
 }
 
@@ -84,7 +87,8 @@ function addCreateFamilyMemberEventListener() {
     let birthday = new Date(document.getElementById('input-birthday').value);
     let iconicMovieQuote = document.getElementById('input-iconic-movie-quote').value;
     let iconicMovieQuoteCitation = document.getElementById('input-iconic-movie-quote-citation').value;
-    let headshotImg = document.getElementById('input-headshot-img').value;
+    // short circuit evaluation for headshot image empty state
+    let headshotImg = document.getElementById('input-headshot-img').value || 'img/john-doe-720w.png';
     allFamilyMembers.push(new FamilyMember(name, birthday, iconicMovieQuote, iconicMovieQuoteCitation, headshotImg));
     appendFamilyMembers();
   });
@@ -92,11 +96,11 @@ function addCreateFamilyMemberEventListener() {
 
 class FamilyMember {
   constructor(name, birthday, iconicMovieQuote, iconicMovieQuoteCitation, headshotImg) {
-    this.name = name;
+    this.name = name || 'John Doe';
     this.birthday = birthday;
     this.age = calculatePersonAge(birthday);
-    this.iconicMovieQuote = iconicMovieQuote;
-    this.iconicMovieQuoteCitation = iconicMovieQuoteCitation;
+    this.iconicMovieQuote = iconicMovieQuote || '"Frankly, my dear, I don\'t give a damn."';
+    this.iconicMovieQuoteCitation = iconicMovieQuoteCitation || 'Gone with the Wind';
     this.headshotImg = headshotImg;
   }
 }
