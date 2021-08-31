@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Product Single Page Application">
+  <meta name="author" content="Rasmus Cederdorff">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+</head>
+
+<body onhashchange="pageChange()">
+  <!-- tabbar navigation -->
+  <nav class="tabbar">
+    <a href="#products">Products</a>
+    <a href="#add">Add Product</a>
+  </nav>
+
+  <!-- pages -->
+  <!-- home page -->
+  <section id="products" class="page">
+    <header class="topbar">
+      <h2>Products</h2>
+    </header>
+    <div class="product-search-container">
+      <input id="product-search-filter" type="search" placeholder="Search" onkeyup="search()">
+      <input id="product-checkbox-filter" type="checkbox" onchange ="search()">
+      <label id="label-only-show-in-stock" for="product-checkbox-filter">Vis kun varer på lager</label>
+    </div>
+    <div id="product-sort-container"> 
+      <label id="label-sort-for" for="product-select-sort">Sorter efter</label>
+      <select id="product-select-sort" onchange="search()">
+        <option>Name</option>
+        <option>Price (ascending)</option>
+        <option>Price (descending)</option>
+        <option>Status</option>
+      </select>
+    </div>
+    <section id="products-container" class="grid-container"></section>
+  </section>
+
+  <!-- about page -->
+  <section id="add" class="page">
+    <header class="topbar">
+      <h2>Add New Product</h2>
+    </header>
+    <form>
+      <input id="product-create-brand" type="text" name="brand" placeholder="Brand">
+      <input id="product-create-model" type="text" name="model" placeholder="Model">
+      <input id="product-create-price" type="text" name="price" placeholder="Price">
+      <input id="product-create-img" type="text" name="img" placeholder="Image URL">
+      <input id="product-create-status" type="text" name="status" placeholder="Status">
+      <button type="button" name="button" onclick="addNewProduct()">Save</button>
+    </form>
+  </section>
+
+  <!-- SPA functionality  -->
+  <script src="js/spa.js"></script>
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
