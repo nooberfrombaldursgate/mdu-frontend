@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Arnold Schwarzenegger",
+    "birthday": "1947, 06, 30",
+    "iconicMovieQuote": "\"If it bleeds, we can kill it.\"",
+    "iconicMovieQuoteCitation": "Predator",
+    "img": "img/arnold.jpg"
+  },
+  {
+    "name": "Steven Seagal",
+    "birthday": "1952, 04, 10",
+    "iconicMovieQuote": "\"Nobody beats me in my kitchen.\"",
+    "iconicMovieQuoteCitation": "Under Siege 2",
+    "img": "img/steven.jpg"
+  },
+  {
+    "name": "Sylvester Stallone",
+    "birthday": "1946, 06, 06",
+    "iconicMovieQuote": "\"They drew first blood.\"",
+    "iconicMovieQuoteCitation": "Rambo",
+    "img": "img/sylvester.jpg"
+  },
+  {
+    "name": "Jean-Claude Van Damme",
+    "birthday": "1960, 10, 18",
+    "iconicMovieQuote": "\"Hunting season… Is over.\"",
+    "iconicMovieQuoteCitation": "Hard Target",
+    "img": "img/jean-claude.jpg"
+  },
+  {
+    "name": "Bruce Willis",
+    "birthday": "1955, 03, 19",
+    "iconicMovieQuote": "\"Yippie-kai-yay, motherf*****r!\"",
+    "iconicMovieQuoteCitation": "Die Hard",
+    "img": "img/bruce.jpg"
+  },
+  {
+    "name": "Chuck Norris",
+    "birthday": "1940, 03, 10",
+    "iconicMovieQuote": "\"When I want your opinion, I’ll beat it out of you.\"",
+    "iconicMovieQuoteCitation": "Code of Silence",
+    "img": "img/chuck.jpg"
+  }
+]
