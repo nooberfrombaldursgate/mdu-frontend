@@ -10,8 +10,7 @@ Fetches json data from the file persons.json
 async function fetchPersons() {
   let response = await fetch('json/persons.json');
   let data = await response.json();
-  _familyMembers = data; // storing my json data in a global variable for later use. 
-  console.log(_familyMembers);
+  _familyMembers = data;
   appendPersons(_familyMembers);
 }
 
