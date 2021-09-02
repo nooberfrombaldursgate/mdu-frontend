@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SINGLE PAGE WEB APP TEMPLATE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Get started with HTML, CSS and JavaScript">
+  <meta name="author" content="Joachim Danielsen">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+</head>
+
+<body onhashchange="pageChange()">
+  <!-- tabbar navigation -->
+  <nav class="tabbar">
+    <a href="#home">All users</a>
+    <a href="#create-user">Create user</a>
+  </nav>
+
+  <!-- pages -->
+  <!-- home page -->
+  <section id="home" class="page">
+    <header class="topbar">
+      <h2>Home</h2>
+    </header>
+
+    <!-- search -->
+    <label id="search-label-filter-in-users" for="search-filter-in-users" onkeyup="search()">Search</label>
+    <input id="search-filter-in-users" type="search" autocomplete="off" placeholder="Search users..." name="q">
+
+    <!-- select -->
+    <div class="sort-select-user-container">
+      <label id="label-sort-for" for="product-select-sort">Sort by</label>
+      <select id="sort-by" onchange="search()">
+        <option>Name</option>
+        <option>Id</option>
+      </select>
+    </div>
+
+    <!-- checkbox -->
+    <input id="checkbox-filter-in-students" type="checkbox" checked onchange="search()">
+    <label id="checkbox-label-filter-in-students">Show students</label>
+    <input id="checkbox-filter-in-teachers" type="checkbox" checked onchange="search()">
+    <label id="checkbox-label-filter-in-teachers">Show teachers</label>
+
+    <section id="content" class="grid-container"></section>
+  </section>
+
+  <!-- about page -->
+  <section id="create-user" class="page">
+    <header class="topbar">
+      <h2>Create user</h2>
+    </header>
+    <form>
+      <input id="input-create-user-name" class="create-user-input" type="text" placeholder="Name">
+      <input id="input-create-user-img" class="create-user-input" type="url" placeholder="http://example.com/image.jpg" pattern="https://.*">
+      <input id="input-create-user-email" class="create-user-input" type="email" placeholder="E-mail">
+      <input id="input-create-user-course" class="create-user-input" type="text" placeholder="Course">
+      </select>
+      <select id="input-create-user-enrollment-type" class="create-user-input">
+        <option>Student</option>
+        <option>Teacher</option>
+      </select>
+      <button type="button" name="button" onclick="createUser()">Save</button>
+    </form>
+  </section>
+
+  <!-- SPA functionality  -->
+  <script src="js/spa.js"></script>
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
