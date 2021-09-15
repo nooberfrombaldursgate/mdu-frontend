@@ -11,7 +11,7 @@
   <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 </head>
 
-<body onhashchange="pageChange()">
+<body>
   <!-- tabbar navigation -->
   <nav class="tabbar">
     <a href="#movies">Movies</a>
@@ -19,7 +19,7 @@
   </nav>
 
   <!-- pages -->
-  <!-- home page -->
+  <!-- movies page -->
   <section id="movies" class="page">
     <header class="topbar">
       <h2>Movies</h2>
@@ -28,7 +28,7 @@
     <section id="movies-container" class="grid-container"></section>
   </section>
 
-  <!-- about page -->
+  <!-- movies by category page -->
   <section id="category" class="page">
     <header class="topbar">
       <h2>Movies By category</h2>
@@ -39,6 +39,15 @@
     <section id="movies-by-category-container" class="grid-container">
       <p>Please, select category</p>
     </section>
+  </section>
+
+  <!-- detail page -->
+  <section id="detailView" class="page">
+    <header class="topbar">
+      <a class="left" href="#movies">Back</a>
+      <h2>Detail View</h2>
+    </header>
+    <section id="detailViewContainer" class="detail-grid"></section>
   </section>
 
   <!-- loader  -->

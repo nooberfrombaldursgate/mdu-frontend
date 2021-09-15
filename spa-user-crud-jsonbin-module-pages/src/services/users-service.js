@@ -17,7 +17,7 @@ class UserService {
         return this.users;
     }
 
-    create(name, mail) {
+    async create(name, mail) {
         // dummy generated user id
         const userId = Date.now();
         // declaring a new user object
@@ -27,7 +27,8 @@ class UserService {
             id: userId
         };
         this.users.push(newUser);
-        this.updateJsonBin()
+        console.log(this.users);
+        return this.updateJsonBin();
     }
 
     async update(id, name, mail) {
@@ -42,7 +43,7 @@ class UserService {
 
     async delete(id) {
         this.users = this.users.filter(user => user.id != id);
-        await this.updateJsonBin(this.users);
+        return this.updateJsonBin();
     }
 
     async updateJsonBin() {
@@ -52,7 +53,10 @@ class UserService {
             body: JSON.stringify(this.users)
         });
         let result = await response.json();
-        this.users = result.data;
+        console.log(result);
+        this.users = result.record;
+        console.log(this.users);
+        return this.users;
     }
 }
 

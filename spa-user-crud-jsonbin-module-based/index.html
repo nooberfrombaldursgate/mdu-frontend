@@ -11,11 +11,11 @@
     <title>SPA User CRUD</title>
 </head>
 
-<body onhashchange="pageChange()">
+<body id="app">
     <!-- tabbar navigation -->
     <nav class="tabbar">
-        <a href="#users">Users</a>
-        <a href="#create">Create</a>
+        <a href="#/users" class="nav-link">Users</a>
+        <a href="#/create" class="nav-link">Create</a>
     </nav>
 
     <!-- pages -->
@@ -23,15 +23,15 @@
     <section id="users" class="page">
         <header class="topbar">
             <h2>Users</h2>
-            <a class="right" href="#create">Create</a>
+            <a href="#/create" class="nav-link right">Create</a>
         </header>
-        <section id="users-grid" class="grid-container"></section>
+        <section class="users-grid grid-container"></section>
     </section>
 
     <!-- create user page -->
-    <section id=" create" class="page">
+    <section id="create" class="page">
         <header class="topbar">
-            <a class="left" href="#users">Back</a>
+            <a href="#/users" class="nav-link left">Back</a>
             <h2>Create user</h2>
             <a class="right" onclick="createUser()">Save</a>
         </header>
@@ -42,27 +42,22 @@
         </form>
     </section>
 
-    <!-- edit user page -->
+    <!-- update user page -->
     <section id="update" class="page">
         <header class="topbar">
-            <a class="left" href="#users">Back</a>
+            <a href="#/users" class="nav-link left">Back</a>
             <h2>Update user</h2>
             <a class="right" onclick="updateUser()">Update</a>
         </header>
         <form>
-            <input type="text" id="name-update" placeholder="Type your name" required>
-            <input type="email" id="mail-update" placeholder="Type your mail" required>
+            <input type="text" class="name-update" placeholder="Type your name" required>
+            <input type="email" class="mail-update" placeholder="Type your mail" required>
             <button type="button" name="button" onclick="updateUser()">Update User</button>
         </form>
     </section>
 
-    <!-- loader  -->
-    <div id="loader">
-        <div class="spinner"></div>
-    </div>
-
     <!-- main js file -->
-    <script src="src/scripts/app.js" type="module"></script>
+    <script src="./src/scripts/app.js" type="module"></script>
 </body>
 
 </html>

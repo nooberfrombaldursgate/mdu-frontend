@@ -1,27 +1,36 @@
-import "./router.js";
-import userService from "./users-service.js";
-import loaderService from "./loader-service.js";
+// imports 
+import Router from "./router.js";
+import UsersComponent from "./users-component.js";
 
 
-async function appendUsers() {
-  let users = await userService.get();
-  let htmlTemplate = "";
-  for (let user of users) {
-    htmlTemplate += /*html*/ `
-      <article>
-        <h3>${user.name}</h3>
-        <p><a href="mailto:${user.mail}">${user.mail}</a></p>
-        <button onclick="selectUser('${user.id}')">Update</button>
-        <button onclick="deleteUser('${user.id}')">Delete</button>
-      </article>
-      `;
-  }
-  document.querySelector("#users-grid").innerHTML = htmlTemplate;
-  loaderService.show(false);
+// init users component
+const app = document.querySelector("#app");
+const usersComponent = new UsersComponent(app);
+
+// init router
+const router = new Router(app, "#/users");
+
+// events - global scope
+window.createUser = async () => {
+    let name = document.querySelector("#name").value;
+    let mail = document.querySelector("#mail").value;
+    await usersComponent.create(name, mail);
+    router.navigateTo("#/users");
 }
 
+window.selectUser = (userId) => {
+    usersComponent.setSelectedUser(userId);
+    router.navigateTo("#/update");
+}
 
-appendUsers();
+window.updateUser = async () => {
+    await usersComponent.update();
+    router.navigateTo("#/users");
+}
 
-window.selectUser = (id) => console.log(id);
-window.deleteUser = (id) => console.log(id);
+window.deleteUser = (userId) => {
+    const deleteUser = confirm("Do you want to delete user?");
+    if (deleteUser) {
+        usersComponent.delete(userId);
+    }
+}

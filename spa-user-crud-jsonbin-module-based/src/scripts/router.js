@@ -1,55 +1,63 @@
-"use strict";
+class Router {
 
-// hide all pages
-function hideAllPages() {
-    let pages = document.querySelectorAll(".page");
-    for (let page of pages) {
-        page.style.display = "none";
+    constructor(app, defaultPage) {
+        this.defaultPage = defaultPage;
+        this.pages = app.querySelectorAll(".page");
+        this.navItems = app.querySelectorAll(".nav-link");
+        this.routes = {
+            "#/users": "users",
+            "#/create": "create",
+            "#/update": "update"
+        };
+        this.initRouter();
     }
-}
 
-// show page or tab
-function showPage(pageId) {
-    hideAllPages();
-    document.querySelector(`#${pageId}`).style.display = "block";
-    setActiveTab(pageId);
-}
+    initRouter() {
+        this.attachNavLinkEvents();
 
-// sets active tabbar/ menu item
-function setActiveTab(pageId) {
-    let pages = document.querySelectorAll(".tabbar a");
-    for (let page of pages) {
-        if (`#${pageId}` === page.getAttribute("href")) {
-            page.classList.add("active");
-        } else {
-            page.classList.remove("active");
+        if (this.routes[location.hash]) {
+            this.defaultPage = location.hash;
+        }
+        this.navigateTo(this.defaultPage);
+    }
+
+    attachNavLinkEvents() {
+        for (const link of this.navItems) {
+            link.addEventListener("click", event => {
+                const path = link.getAttribute("href");
+                this.navigateTo(path);
+                event.preventDefault();
+            });
         }
     }
-}
 
-// navigate to a new view/page by changing href
-function navigateTo(pageId) {
-    location.href = `#${pageId}`;
-}
-
-// set default page or given page by the hash url
-// function is called 'onhashchange'
-function pageChange() {
-    let page = "users";
-    if (location.hash) {
-        page = location.hash.slice(1);
+    // navigate to a new view/page by changing href
+    navigateTo(pathname) {
+        this.hideAllPages();
+        const basePath = location.pathname.replace("index.html", "");
+        window.history.pushState({}, pathname, basePath + pathname);
+        document.querySelector(`#${this.routes[pathname]}`).style.display = "block";
+        this.setActiveTab(pathname);
     }
-    showPage(page);
-}
 
-pageChange(); // called by default when the app is loaded for the first time
-
-// to shoe and hide the loader
-function showLoader(show) {
-    let loader = document.getElementById('loader');
-    if (show) {
-        loader.classList.remove("hide");
-    } else {
-        loader.classList.add("hide");
+    // hide all pages
+    hideAllPages() {
+        for (const page of this.pages) {
+            page.style.display = "none";
+        }
     }
+
+    // sets active tabbar/ menu item
+    setActiveTab(pathname) {
+        for (const link of this.navItems) {
+            if (pathname === link.getAttribute("href")) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        }
+    }
+
 }
+
+export default Router;

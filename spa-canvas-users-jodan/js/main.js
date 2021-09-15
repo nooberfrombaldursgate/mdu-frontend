@@ -12,9 +12,11 @@ async function fetchUsers() {
   search();
 }
 
+
 /*
 Appends json data to the DOM
 */
+
 function appendUsers(users) {
   let htmlTemplate = '';
   for (let user of users) {
