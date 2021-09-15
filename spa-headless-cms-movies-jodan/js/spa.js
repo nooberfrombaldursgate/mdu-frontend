@@ -16,16 +16,16 @@ function showPage(pageId) {
 }
 
 // sets active tabbar/ menu item
-// function setActiveTab(pageId) {
-//   let pages = document.querySelectorAll(".tabbar a");
-//   for (let page of pages) {
-//     if (`#${pageId}` === page.getAttribute("href")) {
-//       page.classList.add("active");
-//     } else {
-//       page.classList.remove("active");
-//     }
-//   }
-// }
+function setActiveTab(pageId) {
+  let pages = document.querySelectorAll(".tabbar a");
+  for (let page of pages) {
+    if (`#${pageId}` === page.getAttribute("href")) {
+      page.classList.add("active");
+    } else {
+      page.classList.remove("active");
+    }
+  }
+}
 
 // navigate to a new view/page by changing href
 function navigateTo(pageId) {
@@ -35,7 +35,7 @@ function navigateTo(pageId) {
 // set default page or given page by the hash url
 // function is called 'onhashchange'
 function pageChange() {
-  let page = "feed";
+  let page = "movies";
   if (location.hash) {
     page = location.hash.slice(1);
   }
