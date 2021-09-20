@@ -1,6 +1,6 @@
 'use strict';
 
-export class TodoList {
+class TodoList {
   constructor() {
     this.todos = [];
   }
@@ -24,3 +24,5 @@ export class TodoList {
     document.querySelector('#todoList').innerHTML = htmlTemplate;
   }
 }
+
+export default TodoList;

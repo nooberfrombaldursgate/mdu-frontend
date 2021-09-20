@@ -1,9 +1,9 @@
 // ========== GLOBAL VARIABLES ==========
 let _users = [];
 let _selectedUserId;
-const _baseUrl = "https://api.jsonbin.io/v3/b/61138ef2d5667e403a3fb6a1";
+const _baseUrl = "https://api.jsonbin.io/b/614268924a82881d6c4fac2b";
 const _headers = {
-  "X-Master-Key": "$2b$10$iAOLguBJ8cd9y87RJTcXy.hlVPE8tVaiaURQ1q9DJH2YLmj.4pmhq",
+  "X-Master-Key": "$2b$10$oCNhreJmOuRa5fiTY7VKzeFveBU0VXXjd7VkIX1BGgO1dJwNj8fi2",
   "Content-Type": "application/json"
 };
 
@@ -12,7 +12,6 @@ const _headers = {
 /**
  * Fetchs person data from jsonbin
  */
-
 async function loadUsers() {
   const url = _baseUrl + "/latest"; // make sure to get the latest version
   const response = await fetch(url, {
