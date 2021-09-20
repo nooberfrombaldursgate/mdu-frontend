@@ -15,7 +15,7 @@ class Router {
 
     initRouter() {
         this.attachNavLinkEvents();
-        window.addEventListener("popstate", () => showPage(location.hash));
+        window.addEventListener("popstate", () => this.showPage(location.hash));
 
         if (this.routes[location.hash]) {
             this.defaultPage = location.hash;
